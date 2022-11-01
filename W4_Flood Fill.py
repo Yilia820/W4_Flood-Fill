@@ -25,22 +25,22 @@ def flood_fill(input_board: List[str], old: str, new: str, x: int, y: int) -> Li
         List[str]: Modified board
     """
 
-    def point(a,b):
+    def String(a,b):
         if input_board[a][b]!=old:
             return None
         else:
             input_board[a]=input_board[a][:b]+new+input_board[a][b+1:]
 
             if a>0:
-                point(a-1,b)
+                String(a-1,b)
             if b>0:
-                point(a,b-1)
+                String(a,b-1)
             if b+1<len(input_board[0]):
-                point(a,b+1)
+                String(a,b+1)
             if a+1<len(input_board):
-                point(a+1,b)
+                String(a+1,b)
 
-    point(x,y)
+    String(x,y)
     return input_board
 
 
